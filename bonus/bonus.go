@@ -10,3 +10,28 @@ func CalculateTowers(barLengths []int) (int, int) {
 	// Seu código aqui
 	return 0, 0
 }
+
+
+
+func buildTowers(bars []int) (int, int) {
+    // Cria um mapa para contar a frequência dos comprimentos das barras
+    freq := make(map[int]int)
+    for _, bar := range bars {
+        freq[bar]++
+    }
+    
+    // Encontra o comprimento mínimo das barras e a quantidade máxima de torres
+    minLen := bars[0]
+    maxTowers := freq[minLen]
+    for len, count := range freq {
+        if count > maxTowers {
+            maxTowers = count
+        }
+        if len < minLen {
+            minLen = len
+        }
+    }
+    
+    // Retorna a altura máxima das torres e a quantidade de torres
+    return minLen, maxTowers
+}
