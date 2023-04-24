@@ -13,42 +13,15 @@ package q3
 //Se M ou N forem iguais ou menores que 0, a função deve retornar um erro.
 
 func DominoPieces(m, n int) (int, error) {
-	// Seu código aqui
-	return 0, nil
-}
 
+	if m <= 0 || n <= 0 {
+		return 0, fmt.Errorf("Valores menores que zero!")
+	}
 
+	area := m * n
 
+	cabe := area / 2
 
-package main
+	return cabe, nil
 
-import "fmt"
-
-func maxDominoes(M int, N int) (int, error) {
-    if M <= 0 || N <= 0 {
-        return 0, fmt.Errorf("M and N must be greater than 0")
-    }
-
-    // Verificando se M ou N são ímpares e ajustando para serem pares
-    if M%2 == 1 {
-        M--
-    }
-    if N%2 == 1 {
-        N--
-    }
-
-    // Calculando o número máximo de peças de dominó que podem ser colocadas
-    max := (M * N) / 2
-
-    return max, nil
-}
-
-func main() {
-    M, N := 3, 5
-    max, err := maxDominoes(M, N)
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    fmt.Printf("M = %d, N = %d, Max dominoes = %d\n", M, N, max) // output: M = 3, N = 4, Max dominoes = 6
 }
