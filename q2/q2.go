@@ -1,7 +1,5 @@
 package q2
 
-import "fmt"
-
 func ProblemsSolved(answers [][3]bool) int {
 	count := 0
 	for _, opiniao := range answers {
