@@ -1,4 +1,6 @@
-package q4
+package main
+
+import  "errors"
 
 func ClassifyPrices(prices []int) (int, error) {
 	n := len(prices)
@@ -8,19 +10,19 @@ func ClassifyPrices(prices []int) (int, error) {
 		return 3, nil
 	}
 
-	isIncreasing := true
-	isDecreasing := true
+	cres := true
+	dre := true
 	for i := 1; i < n; i++ {
 		if prices[i] > prices[i-1] {
-			isDecreasing = false
+			dre = false
 		} else if prices[i] < prices[i-1] {
-			isIncreasing = false
+			cres = false
 		}
 	}
 
-	if isIncreasing {
+	if cres {
 		return 1, nil
-	} else if isDecreasing {
+	} else if dre {
 		return 2, nil
 	} else {
 		return 3, nil
