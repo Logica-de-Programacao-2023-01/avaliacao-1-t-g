@@ -8,30 +8,20 @@ package bonus
 
 func CalculateTowers(barLengths []int) (int, int) {
 	freq := make(map[int]int)
-    for _, bar := range bars {
-        freq[bar]++
-    }
-    
-   
-    minLen := bars[0]
-    maxTowers := freq[minLen]
-    for len, count := range freq {
-        if count > maxTowers {
-            maxTowers = count
-        }
-        if len < minLen {
-            minLen = len
-        }
-    }
-    
-    
-    return minLen, maxTowers
+	for _, bar := range barLengths {
+		freq[bar]++
+	}
+
+	minLen := barLengths[0]
+	maxTo := freq[minLen]
+	for len, count := range freq {
+		if count > maxTo {
+			maxTo = count
+		}
+		if len < minLen {
+			minLen = len
+		}
+	}
+
+	return minLen, maxTo
 }
-
-func main() {
-    bars := []int{1, 2, 3}
-    height, numTowers := buildTowers(bars)
-    fmt.Printf("%d altura máxima\n%d torres\n", height, numTowers)
-}
-
-
