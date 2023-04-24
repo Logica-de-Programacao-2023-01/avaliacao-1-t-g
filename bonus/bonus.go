@@ -7,21 +7,23 @@ package bonus
 //barras da melhor maneira possível, determinando a altura da torre mais alta e quantas torres podem ser construídas.
 
 func CalculateTowers(barLengths []int) (int, int) {
-	freq := make(map[int]int)
-	for _, bar := range barLengths {
-		freq[bar]++
-	}
-
 	minLen := barLengths[0]
-	maxTo := freq[minLen]
-	for len, count := range freq {
-		if count > maxTo {
-			maxTo = count
-		}
-		if len < minLen {
-			minLen = len
+	maxTo := 0
+
+	counts := make([]int, len(barLengths))
+	for _, bar := range barLengths {
+		counts[bar-minLen]++
+		if counts[bar-minLen] > maxTo {
+			maxTo = counts[bar-minLen]
 		}
 	}
 
-	return minLen, maxTo
+	numTowers := maxTo
+	for _, count := range counts {
+		if count > 0 {
+			numTowers++
+		}
+	}
+
+	return minLen, barLengths[2]
 }
