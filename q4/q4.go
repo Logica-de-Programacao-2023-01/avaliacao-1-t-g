@@ -1,4 +1,4 @@
-package main
+package q4
 
 import  "errors"
 
