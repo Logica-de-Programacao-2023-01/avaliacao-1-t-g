@@ -28,4 +28,10 @@ func CalculateTowers(barLengths []int) (int, int) {
     return minLen, maxTowers
 }
 
+func main() {
+    bars := []int{1, 2, 3}
+    height, numTowers := buildTowers(bars)
+    fmt.Printf("%d altura máxima\n%d torres\n", height, numTowers)
+}
+
 
