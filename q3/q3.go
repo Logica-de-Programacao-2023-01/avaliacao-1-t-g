@@ -1,5 +1,7 @@
 package q3
 
+import "fmt"
+
 //Você recebe um tabuleiro retangular de M x N quadrados. Além disso, você tem um número ilimitado de peças de dominó
 //padrão de 2 x 1 quadrados. Você pode girar as peças. Você deve colocar o máximo de peças de dominó possível no
 //tabuleiro, seguindo as seguintes condições:
