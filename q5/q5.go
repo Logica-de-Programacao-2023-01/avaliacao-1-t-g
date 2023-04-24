@@ -18,3 +18,34 @@ func ProcessString(s string) string {
 	// Seu código aqui
 	return ""
 }
+
+
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func processar_sequencia(sequencia string) string {
+    var resultado strings.Builder
+    vogais := "aeiouAEIOU"
+    for _, letra := range sequencia {
+        if strings.ContainsRune(vogais, letra) {
+            continue
+        } else if letra >= 'A' && letra <= 'Z' {
+            resultado.WriteString(strings.ToLower(string(letra)))
+            resultado.WriteString(".")
+        } else {
+            resultado.WriteString(string(letra))
+            resultado.WriteString(".")
+        }
+    }
+    return resultado.String()
+}
+
+func main() {
+    sequencia := "Hello World"
+    resultado := processar_sequencia(sequencia)
+    fmt.Println(resultado)
+}
