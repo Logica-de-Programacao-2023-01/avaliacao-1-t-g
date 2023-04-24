@@ -16,3 +16,37 @@ func ProblemsSolved(answers [][3]bool) int {
 	// Seu código aqui
 	return 0
 }
+
+
+package main
+
+import "fmt"
+
+func countSolutions(opinions [][]bool) int {
+    count := 0
+    for _, opinion := range opinions {
+        sum := 0
+        for _, hasSolution := range opinion {
+            if hasSolution {
+                sum++
+            }
+        }
+        if sum >= 2 {
+            count++
+        }
+    }
+    return count
+}
+
+func main() {
+    opinions := [][]bool{
+        {true, true, false},
+        {false, true, true},
+        {true, false, true},
+        {true, true, true},
+        {false, false, true},
+    }
+
+    solutions := countSolutions(opinions)
+    fmt.Println(solutions) // output: 4
+}
