@@ -9,11 +9,13 @@ func ProcessString(s string) string {
 		if strings.ContainsRune(vogais, letra) {
 			continue
 		} else if letra >= 'A' && letra <= 'Z' {
+			resultado.WriteString(".")
 			resultado.WriteString(strings.ToLower(string(letra)))
-			resultado.WriteString(".")
+			
 		} else {
-			resultado.WriteString(string(letra))
 			resultado.WriteString(".")
+			resultado.WriteString(string(letra))
+			
 		}
 	}
 	return resultado.String()
