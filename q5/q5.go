@@ -1,9 +1,6 @@
 package q5
 
-import (
-	"fmt"
-	"strings"
-)
+import 	"strings"
 
 func ProcessString(s string) string {
 	var resultado strings.Builder
